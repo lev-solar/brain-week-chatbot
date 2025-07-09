@@ -49,3 +49,6 @@ test/coverage
 __pycache__/
 index/
 runbooks/
+venv/
+.env
+.env.*
