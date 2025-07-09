@@ -1,0 +1,51 @@
+# Generic repo config
+logs
+*.log
+pids
+*.pid
+node_modules
+*.csv
+*.dat
+*.out
+*.gz
+npm-debug.log
+node_modules
+.DS_STORE
+.build
+.idea/
+coverage
+.npmrc
+*.pyc
+__pycache__
+schema.graphql
+
+# Compiled output
+dist
+test-results.xml
+report.xml
+
+# test output
+.nyc_output
+
+# Encryption config
+encryption-config.js
+
+build.json
+
+# Python version managers
+.python-version
+
+package-lock.json
+
+# SonarCloud
+sonar-project.properties
+test/coverage
+.nyc_output/
+.scannerwork/
+
+# Editor
+.vscode
+
+__pycache__/
+index/
+runbooks/

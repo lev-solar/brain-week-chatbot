@@ -1,0 +1,11 @@
+streamlit
+faiss-cpu
+langchain
+langchain-community
+langchain-core
+langchain-ollama
+sentence-transformers
+PyMuPDF
+beautifulsoup4
+html2text
+ollama
