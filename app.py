@@ -17,6 +17,7 @@ class LocalEmbedding(Embeddings):
         return self.model.encode([text])[0].tolist()
 
 def build_chain():
+    # Load FAISS Vector Index (Facebook AI Similarity Search)
     # Safe to allow_dangerous_deserialization since index was generated locally and not from an untrusted source
     db = FAISS.load_local("index", LocalEmbedding(), allow_dangerous_deserialization=True)
     retriever = db.as_retriever()
@@ -26,7 +27,11 @@ def build_chain():
     memory = ConversationBufferMemory(
         memory_key="chat_history", return_messages=True
     )
-
+    # [User Query] → [Retriever] → [Top-matching text chunks from FAISS]
+    #                             ↓
+    #                      [LLM (Ollama)]
+    #                             ↓
+    #                   [Answer using documents]
     qa_chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=retriever,
