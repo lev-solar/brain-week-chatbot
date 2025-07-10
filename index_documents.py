@@ -35,6 +35,10 @@ def load_docs():
 
 def main():
     docs = load_docs()
+    # This code creates a text splitter and uses it to break down large documents into smaller, 
+    # manageable chunks for processing. The RecursiveCharacterTextSplitter is a sophisticated 
+    # text splitting algorithm from LangChain that intelligally divides documents while trying 
+    # to preserve semantic meaning and context.
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
     chunks = splitter.split_documents(docs)
 
