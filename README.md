@@ -2,6 +2,8 @@
 
 A local chatbot that helps you investigate issues using **runbooks and troubleshooting documents** in formats like **PDF, HTML, Markdown, and plain text**. Powered by **local LLMs via Ollama**, **local embeddings via SentenceTransformers**, and **FAISS** for retrieval. Comes with a simple **Streamlit single-page UI**.
 
+The technique used is Retrieval-Augmented Generation (RAG), which enables the LLM to access and incorporate information from your documents at query time, improving the relevance and accuracy of its responses
+
 ---
 
 ## ✨ Features
