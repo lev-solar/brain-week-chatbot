@@ -58,6 +58,9 @@ llama3
 phi3
 gemma, etc.
 
+Ollama is a local LLM runtime that allows you to run various open-source language models directly on your machine
+without needing to make API calls to external services like OpenAI or Anthropic
+
 ### 5. 📂 Add Your Runbooks
 
 ```
