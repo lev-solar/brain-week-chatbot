@@ -16,7 +16,7 @@ class LocalEmbedding(Embeddings):
     def embed_query(self, text):
         return self.model.encode([text])[0].tolist()
 
-def build_chain():
+def build_chain(model_name="llama3.1"):
     # Load FAISS Vector Index (Facebook AI Similarity Search)
     # Safe to allow_dangerous_deserialization since index was generated locally and not from an untrusted source
     db = FAISS.load_local("index", LocalEmbedding(), allow_dangerous_deserialization=True)
@@ -28,7 +28,7 @@ def build_chain():
     # Creates a large language model (LLM) instance using Ollama, specifically loading the "mistral" model. 
     # Ollama is a local LLM runtime that allows you to run various open-source language models directly on your machine 
     # without needing to make API calls to external services like OpenAI or Anthropic.
-    llm = OllamaLLM(model="mistral")  # Or llama3, phi3, etc.
+    llm = OllamaLLM(model=model_name) 
 
     # Creates a conversation memory object that enables your chatbot to maintain context across multiple interactions 
     # within a conversation session.
